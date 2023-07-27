@@ -2,10 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <title>Handwritten Digit Recognition with TensorFlow</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1 id="title">Handwritten Digit Reconigtion with TensorFlow</h1>
+        <div class="content">
+            <div class="box">
+                <h3>Write Here</h3>
+                <canvas id="board" width="224" height="224"></canvas>
+            </div>
+            <div class="buttons">
+                <button id="send">Send</button>
+                <button id="clear">Clear</button>
+            </div>
+            <div class="box">
+                <h3>Result</h3>
+                <div class="resultBox">
+                    <h1 id="result"></h1>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Made by <a href="https://github.com/kauasdev" target="_blank">kauasdev</a></p>
+        </footer>
+    </div>
 </body>
 </html>
