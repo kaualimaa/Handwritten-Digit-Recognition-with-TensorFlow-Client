@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
 
     canvas.addEventListener("mousedown", e => {
         isDrawing = true;
-        ctx.lineWidth = 20;
+        ctx.lineWidth = 12;
         ctx.moveTo(
             e.clientX - canvas.offsetLeft,
             e.clientY - canvas.offsetTop
@@ -46,10 +46,10 @@ window.addEventListener("load", () => {
                 },
                 body: JSON.stringify({ data: dataBase64 })
             }
-        ).then(res => {
-            console.log(res)
-        }).catch(err => {
-            console.log(err)
+        ).then(res => res.json())
+        .then(data => {
+            console.log(data)
+            result.innerText = data.data
         })
     })
 
@@ -60,6 +60,8 @@ window.addEventListener("load", () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.restore();
+
+        result.innerText = ""
     })
 
 })
