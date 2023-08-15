@@ -23,6 +23,21 @@
     margin-bottom: 10px;
 }
 
+#apiStatus {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.on {
+    color: rgb(11, 168, 11);
+}
+
+.off {
+    color: rgb(244, 39, 39);
+}
+
 .content {
     display: flex;
     justify-content: space-evenly;
@@ -113,7 +128,7 @@ footer {
 }
 
 footer p {
-    font: normal normal 0.6em "Poppins";
+    font: normal normal 0.9em "Poppins", sans-serif, Arial;
 }
 
 footer a {

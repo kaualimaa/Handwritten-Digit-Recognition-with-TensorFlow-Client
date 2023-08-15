@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
     const canvas = document.getElementById("board");
     const ctx = canvas.getContext("2d");
+    const apiStatus = document.getElementById("apiStatus")
     const sendButton = document.getElementById("send") 
     const clearButton = document.getElementById("clear") 
     const result = document.getElementById("result") 
@@ -64,4 +65,28 @@ window.addEventListener("load", () => {
         result.innerText = ""
     })
 
+    function autoReload(){
+        i = 10
+        setInterval(() => {
+            text = `API Status: OFF (Auto reload in ${i}s)`
+            apiStatus.innerHTML = text
+            i -= 1
+
+            if (i < 0){
+                window.location = window.location
+            }
+        }, 1000)
+    }
+
+    setTimeout(async() => {
+        try {
+            await fetch("http://127.0.0.1:2940/")
+            apiStatus.innerHTML = "API Status: ON"
+            apiStatus.className = "on"
+        } catch (error) {
+            console.log(error)
+            apiStatus.className = "off"
+            autoReload()
+        }
+    }, 0)
 })
